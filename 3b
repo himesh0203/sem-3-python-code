@@ -1,0 +1,11 @@
+b. Python Program to Count Number of Lines, Words, and Characters in a File
+# b. Count number of lines, words, and characters in a file
+file_name = "sample.txt"
+with open(file_name, 'r') as f:
+lines = f.readlines()
+line_count = len(lines)
+word_count = sum(len(line.split()) for line in lines)
+char_count = sum(len(line) for line in lines)
+print(f"Lines: {line_count}")
+print(f"Words: {word_count}")
+print(f"Characters: {char_count}")
