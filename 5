@@ -1,0 +1,111 @@
+Python Menu-Driven Program: Linked List, Stack, and Queue
+from collections import deque
+linked_list = [] # Using Python list
+stack = [] # Using Python list
+queue = deque() # Using deque for Queue
+def linked_list_menu():
+while True:
+print("\n--- Linked List Operations ---")
+print("1. Insert at end")
+print("2. Insert at position")
+print("3. Delete element")
+print("4. Display list")
+print("5. Back to main menu")
+choice = int(input("Enter choice: "))
+if choice == 1:
+val = input("Enter value to insert: ")
+linked_list.append(val)
+elif choice == 2:
+val = input("Enter value: ")
+pos = int(input("Enter position (0-indexed): "))
+if 0 <= pos <= len(linked_list):
+linked_list.insert(pos, val)
+else:
+print("Invalid position!")
+elif choice == 3:
+val = input("Enter value to delete: ")
+if val in linked_list:
+linked_list.remove(val)
+else:
+print("Value not found!")
+elif choice == 4:
+print("Linked List:", linked_list)
+elif choice == 5:
+break
+else:
+print("Invalid choice!")
+def stack_menu():
+while True:
+print("\n--- Stack Operations ---")
+print("1. Push")
+print("2. Pop")
+print("3. Peek (top element)")
+print("4. Display stack")
+print("5. Back  to main menu")
+choice = int(input("Enter choice: "))
+if choice == 1:
+val = input("Enter value to push: ")
+stack.append(val)
+elif choice == 2:
+if stack:
+print("Popped:", stack.pop())
+else:
+print("Stack is empty!")
+elif choice == 3:
+if stack:
+print("Top element:", stack[-1])
+else:
+print("Stack is empty!")
+elif choice == 4:
+print("Stack (top->bottom):", stack[::-1])
+elif choice == 5:
+break
+else:
+print("Invalid choice!")
+def queue_menu():
+while True:
+print("\n--- Queue Operations ---")
+print("1. Enqueue")
+print("2. Dequeue")
+print("3. Peek (front element)")
+print("4. Display queue")
+print("5. Back to main menu")
+choice = int(input("Enter choice: "))
+if choice == 1:
+val = input("Enter value to enqueue: ")
+queue.append(val)
+elif choice == 2:
+if queue:
+print("Dequeued:", queue.popleft())
+else:
+print("Queue is empty!")
+elif choice == 3:
+if queue:
+print("Front element:", queue[0])
+else:
+print("Queue is empty!")
+elif choice == 4:
+print("Queue (front->rear):", list(queue))
+elif choice == 5:
+break
+else:
+print("Invalid choice!")
+# Main menu
+while True:
+print("\n==== Data Structure Menu ====")
+print("1. Linked List")
+print("2. Stack")
+print("3. Queue")
+print("4. Exit")
+main_choice = int(input("Enter your choice: "))
+if main_choice == 1:
+linked_list_menu()
+elif main_choice == 2:
+stack_menu()
+elif main_choice == 3:
+queue_menu()
+elif main_choice == 4:
+print("Exiting program.")
+break
+else:
+print("Invalid choice!")
