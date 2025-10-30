@@ -1,0 +1,31 @@
+Program:
+import numpy as np
+print("The version of numpy : ",np.__version__)
+# 1. Create an array
+arr = np.array([10, 20, 30, 40, 50])
+print("Original Array:", arr)
+# 2. Shape and Size
+print("Shape:", arr.shape) # dimensions
+print("Size:", arr.size) # total number of elements
+# 3. Basic Statistics
+print("Sum:", np.sum(arr))
+print("Mean:", np.mean(arr))
+print("Max:", np.max(arr))
+print("Min:", np.min(arr))
+# 4. Mathematical Operations
+print("Square Root:", np.sqrt(arr))
+print("Exponential:", np.exp(arr))
+print("Sine values:", np.sin(arr))
+# 5. Array Creation Methods
+zeros = np.zeros((2,3))
+ones = np.ones((2,3))
+rand_arr = np.random.rand(2,3)
+print("\nZeros Array:\n", zeros)
+print("Ones Array:\n", ones)
+print("Random Array:\n", rand_arr)
+# 6. Reshape
+reshaped = np.arange(1, 10).reshape(3,3)
+print("\nReshaped 3x3 Array:\n", reshaped)
+# 7. Indexing & Slicing
+print("First Element:", arr[0])
+print("Last 3 Elements:", arr[-3:])
