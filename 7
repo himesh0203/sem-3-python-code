@@ -1,0 +1,45 @@
+Server.py
+import socket
+# Create socket
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# Bind to host and port
+server_socket.bind(('localhost', 12345))
+server_socket.listen(1)
+print("🔌 Server is listening on port 12345...")
+# Accept client connection
+conn, addr = server_socket.accept()
+print(f"✅ Connected to {addr}")
+# Receive data from client
+data = conn.recv(1024).decode()
+print(f"📩 Received from client: {data}")
+# Send response
+response = "Hello Client, I received your message!"
+conn.send(response.encode())
+# Close connection
+conn.close()
+server_socket.close()
+Client.py
+import socket
+# Create socket
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# Connect to server
+client_socket.connect(('localhost', 12345))
+# Send message to server
+message = "Hello Server, this is Client!"
+client_socket.send(message.encode())
+# Receive response from server
+response = client_socket.recv(1024).decode()
+print(f"📩 Received from server: {response}")
+# Close connection
+client_socket.close()
+
+Steps to Run in VS Code
+1. Open VS Code.
+2. Save the first code as server.py and the second as client.py in the same
+folder.
+3. Open two terminals in VS Code:
+o Terminal 1: Run the server
+python server.py
+(It will wait for client connection)
+o Terminal 2: Run the client
+python client.py
