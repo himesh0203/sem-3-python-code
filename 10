@@ -1,0 +1,32 @@
+Program:
+import numpy as np
+# Create 1D array
+arr1 = np.array([10, 20, 30, 40, 50])
+print("1D Array:", arr1)
+# Create 2D array
+arr2 = np.array([[1, 2, 3], [4, 5, 6]])
+print("\n2D Array:\n", arr2)
+# Array properties
+print("\nArray Properties:")
+print("Shape of arr2:", arr2.shape) # (2 rows, 3 columns)
+print("Dimension of arr2:", arr2.ndim) # 2D
+print("Data type of arr1:", arr1.dtype)
+# Array operations
+print("\nArray Operations:")
+print("arr1 + 5:", arr1 + 5) # Add scalar
+print("arr1 * 2:", arr1 * 2) # Multiply scalar
+print("arr1 squared:", arr1 ** 2) # Power
+print("Sum of arr1:", arr1.sum()) # Sum of elements
+# Slicing
+print("\nSlicing:")
+print("First 3 elements of arr1:", arr1[:3])
+print("Second row of arr2:", arr2[1, :])
+print("Element at (0,2) in arr2:", arr2[0, 2])
+# Useful functions
+print("\nUseful NumPy Functions:")
+zeros_arr = np.zeros((2, 3))
+ones_arr = np.ones((3, 3))
+rand_arr = np.random.randint(1, 10, size=(2, 3))
+print("Zeros Array:\n", zeros_arr)
+print("Ones Array:\n", ones_arr)
+print("Random Array:\n", rand_arr)
