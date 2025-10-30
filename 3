@@ -1,0 +1,17 @@
+import os
+# Path to get the current directory
+print("Current Working Directory:", os.getcwd())
+print("Expected File Path:", os.path.abspath("simple.txt"))
+a. Python Program to Append Data to an Existing File and Display the Entire
+File
+# a. Append data to a file and display the entire file content
+# a. Append data to a file and display the entire file content
+file_name = "C:/Users/Administrator/Desktop/program/simple.txt"
+# Append mode ('a') to add data
+with open(file_name, 'a') as f:
+f.write("\nThis is a new line appended to the file.")
+# Read and display full file content
+with open(file_name, 'r') as f:
+content = f.read()
+print("File Contents:\n")
+print(content)
